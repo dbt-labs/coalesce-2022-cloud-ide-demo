@@ -18,7 +18,7 @@ renamed as (
         name as product_name,
         type as product_type,
         description as product_description,
-        (price / 100.0)::float as product_price,
+        {{ cents_to_dollars('price', 2)}} as product_price,
 
 
         ---------- derived

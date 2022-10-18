@@ -18,7 +18,7 @@ renamed as (
 
         ---------- properties
         name as supply_name,
-        (cost / 100.0)::float as supply_cost,
+        {{ cents_to_dollars('cost', 2)}} as supply_cost,
         perishable as is_perishable_supply
 
     from source

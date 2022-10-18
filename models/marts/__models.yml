@@ -77,3 +77,33 @@ models:
         description: A boolean indicating if this order included any food items.
       - name: is_drink_order
         description: A boolean indicating if this order included any drink items.
+
+  - name: locations_monthly_spine
+    description: Locations-month overview, offering key details for each location each month. One row per location-month.
+    columns:
+      - name: location_id
+        description: The unique key of the locations mart.
+        tests:
+          - not_null
+      - name: order_month
+        description: Month of the order
+      - name: location_name
+        description: Name of the store location
+      - name: count_items
+        description: Number of items (food and drinks) sold that month.
+      - name: count_food_items
+        description: Number of food items sold that month.
+      - name: count_drink_items
+        description: Number of drink items sold that month.
+      - name: unique_customers
+        description: Number of unique customers that month
+      - name: revenue
+        description: Total revenue that month.
+      - name: cost_of_goods_sold
+        description: Cost of goods sold
+      - name: gross_profit
+        description: Gross profit, defined as revenue minus cost of goods sold
+      - name: profit_margin
+        description: Profit margin, defined as percentage of profit over revenue
+      - name: gross_profit_per_customer
+        description: Gross profit divided by number of unique customers
